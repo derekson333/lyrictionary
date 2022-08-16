@@ -10,11 +10,7 @@
     font-size: 20px;
     color: grey;
   }
-  #currentDay.lead {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    color: darkgoldenrod;
-  }
+
   #footer-name{
     text-align: center;
     font-size: 16px;
