@@ -1,90 +1,122 @@
-* body {
-    font-family: "Open Sans", sans-serif;
-    font-style: bold;
-    font-size: 20px;
-    line-height: 1;
-    background-color: #fff0f5;
-  }
-  p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    color: grey;
-  }
+* {
+  margin: 10px;
+  padding: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-style: bold;
+  font-size: 20px;
+  line-height: 1;
+  /* background-color: antiquewhite; */
+}
 
-  #footer-name{
-    text-align: center;
-    font-size: 16px;
-    color: darkgoldenrod;
-  }
-  textarea {
-    background: transparent;
-    border: none;
-    resize: none;
-    color: #000000;
-    border-left: 1px solid black;
-    padding: 10px;
-  }
-  
-  .jumbotron {
-    text-align: center;
-    background-color: transparent;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-  }
-  
-  .description {
-    white-space: pre-wrap;
-  }
-  
-  .time-block {
-    text-align: center;
-    border-radius: 15px;
-  }
-  
-  .row {
-    white-space: pre-wrap;
-    border-top: 1px solid white;
-    height: 80px;
-  }
-  
-  .check-button {
-    border: 1px solid lightgray;
-    background-color: lightblue;
-  }
-  .hour.col-md-2 {
-    color: gray;
-    background-color: lightblue;
-    border-top: 1px dashed #000000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    align-content: center;
-  }
-  .past {
-    background-color:palevioletred;
-    color: white;
-  }
-  
-  .present {
-    background-color: #ff6961;
-    color: white;
-  }
-  
-  .future {
-    background-color: #77dd77;
-    color: white;
-  }
-  
-  .saveBtn {
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06aed5;
-    color: white;
-  }
-  
-  .saveBtn i:hover {
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-  }
-  
+.nav-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+.right hide-on-med-and-down{
+  color: black;
+}
+nav #nav-mobile li {
+  color: black;
+  font-size: 40px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+div h1 {
+  color: cornflowerblue;
+  font-size: 72px;
+}
+
+div h4 {
+  color: yellowgreen;
+  font-size: 40px;
+  font-weight: normal;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.previous-search {
+
+
+  clear: both;
+  float: right;
+  width: 20%;
+  height: 80%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: #2589bd;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  color: grey;
+}
+
+#footer-name {
+  text-align: center;
+  font-size: 16px;
+  color: darkgoldenrod;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.banner {
+  padding: 100px;
+  text-align: center;
+  background-color: #2589bd;
+  border-radius: 0;
+}
+
+
+/* .row {
+  white-space: pre-wrap;
+  border-top: 1px solid white;
+  height: 80px;
+} */
+
+.check-button {
+  border: 1px solid lightgray;
+  background-color: lightblue;
+}
+
+.hour.col-md-2 {
+  color: gray;
+  background-color: lightblue;
+  border-top: 1px dashed #000000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  align-content: center;
+}
+
+/* .past {
+  background-color: palevioletred;
+  color: white;
+}
+
+.present {
+  background-color: #ff6961;
+  color: white;
+}
+
+.future {
+  background-color: #77dd77;
+  color: white;
+} */
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06aed5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
