@@ -1,4 +1,4 @@
-const word = "lyric"
+const word = "test"
 const options = {
     method: 'GET',
     headers: {
@@ -7,7 +7,7 @@ const options = {
     }
   };
     
-  fetch('https://wordsapiv1.p.rapidapi.com/words/'+word+'/definitions', options)
+fetch('https://wordsapiv1.p.rapidapi.com/words/'+word+'/definitions', options)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
