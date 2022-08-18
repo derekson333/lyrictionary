@@ -32,9 +32,10 @@ var getLyrics = function (id) {
       var lyricsString = (data.message.body.lyrics.lyrics_body);
       removed = lyricsString.slice(0, lyricsString.indexOf('...'));
       console.log(removed);
-      var lyricsParagraph = document.createElement('p');
-      lyricsParagraph.innerHTML = removed;
-      content.append(lyricsParagraph);
+
+      // var lyricsParagraph = document.createElement('p');
+      // lyricsParagraph.innerHTML = removed;
+      // content.append(lyricsParagraph);
 
       var stringLyrics = removed.toString();
       console.log(stringLyrics);
@@ -46,10 +47,14 @@ var getLyrics = function (id) {
         var a = document.createElement('a');
         a.href = "#";
         a.innerText = item + " ";
-        document.body.appendChild(a);
+        
+        content.appendChild(a);
+        a.onclick = function(){console.log(a.innerText)};
       });
     })
 }
+
+var getDefinition = function() {console.log('hello')}
 submitEl.addEventListener('click', function() {
 console.log('something')
   var currentArtist = artistIn.value;
