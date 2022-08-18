@@ -1,5 +1,7 @@
 var word
 var wordDef
+var displayDef
+
 const options = {
     method: 'GET',
     headers: {
@@ -14,7 +16,11 @@ function getDefinition(word) {
     .then(response => wordDef = response)
     .then(response => console.log(wordDef))
     .catch(err => console.error(err));
-    
+}
+// manipulates JSON into string to display
+function defString() {
+    displayDef = wordDef["definitions"][0]
+    displayDef = wordDef["word"]+": "+displayDef["definition"]
 } 
 
 
