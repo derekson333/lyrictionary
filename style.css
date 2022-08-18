@@ -1,6 +1,4 @@
 * {
-  margin: 10px;
-  padding: 2px;
   font-family: "Open Sans", sans-serif;
   font-style: bold;
   font-size: 20px;
@@ -8,34 +6,39 @@
   /* background-color: antiquewhite; */
 }
 
-.nav-wrapper {
+.nav-wrapper h1 {
   text-align: center;
-  margin-top: 30px;
+  padding-bottom: 10px;
 }
-.right hide-on-med-and-down{
-  color: black;
-}
-nav #nav-mobile li {
-  color: black;
+
+#nav-mobile {
+  color: white;
   font-size: 40px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 div h1 {
-  color: cornflowerblue;
+  color: darkgray;
   font-size: 72px;
+  font-family: "Open Sans", sans-serif;
+}
+div h2 {
+  color: white;
+  font-size: 24px;
+  font-stretch: wider;
+  font-family: monospace;
 }
 
-div h4 {
-  color: yellowgreen;
-  font-size: 40px;
-  font-weight: normal;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+nav li a {
+  margin-top: 20px;
+  color: white;
+  align-items: center;
+  font-size: 24px;
+  font-style: bold;
+  font-family: "Open Sans", sans-serif;
 }
 
 .previous-search {
-
-
   clear: both;
   float: right;
   width: 20%;
@@ -50,19 +53,11 @@ p {
   color: grey;
 }
 
-#footer-name {
+div.footer-name {
   text-align: center;
-  font-size: 16px;
+  font-size: 8px;
   color: darkgoldenrod;
-}
-
-textarea {
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
+  background-image: linear-gradient(135deg, pink 20%, lightgray);
 }
 
 .banner {
@@ -71,7 +66,6 @@ textarea {
   background-color: #2589bd;
   border-radius: 0;
 }
-
 
 /* .row {
   white-space: pre-wrap;
@@ -92,21 +86,6 @@ textarea {
   font-size: 16px;
   align-content: center;
 }
-
-/* .past {
-  background-color: palevioletred;
-  color: white;
-}
-
-.present {
-  background-color: #ff6961;
-  color: white;
-}
-
-.future {
-  background-color: #77dd77;
-  color: white;
-} */
 
 .saveBtn {
   border-left: 1px solid black;
