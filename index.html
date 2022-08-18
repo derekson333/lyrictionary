@@ -4,26 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Lyrictionary</title>
 </head>
+
 <body>
-    <nav>
-        <div class="nav-wrapper">
+    <header>
+
+        <div class="nav-wrapper banner">
             <h1>Lyrictionary</h1>
             <h2>Come and find the lyrics to your favorite songs</h2>
         </div>
-    </nav>
-    <div class="col s3">
-        <form action="/action_page.php">
-            <label for="songtitle">Song Title:</label><br><br>
-            <input placeholder="Song Title here"><br><br>
-            <input placeholder="Artist"><br><br>
-            <input placeholder="Lyrics"><br><br>
-            <input type="submit">
-        </form>
-    </div>
-    <div class="divider"></div>
+        <nav>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="">Song Lyrics</a></li>
+                <li><a href="">Word Definition</a></li>
+                <li><a href="">Search History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col s6">
+                <form action="/action_page.php">
+                    <label for="songtitle">Song Info:</label><br><br>
+                    <input placeholder="Song Title here"><br><br>
+                    <input placeholder="Artist"><br><br>
+                    <input placeholder="Lyrics"><br><br>
+                    <input type="submit">
+                </form>
+            </div>
+        </div>
+        <!-- <div class="divider"></div>
     <div class="section">
         <h4> song lyrics</h4>
     </div>
@@ -34,13 +48,51 @@
     </div>
 
     <div class="col s9">
-        <h4>word and definition</h4>
-    </div>
-    </div>
+        <h4> word and definition</h4> -->
+        <div class="row">
+            <div class="col s12 m7 align-center">
+                <h4 class="header">Song Lyrics</h4>
+                <div class="card horizontal">
+                    <div class="card-image">
 
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content"></div>
+                        <div placeholder="Lyrics">Lyrics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col s9">
+            <h4> Word and Definition</h4>
+            <div class="card horizontal">
+                <div class="card-image">
+
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content"></div>
+                    <div placeholder="Word and Definition">Definition</div>
+                </div>
+
+                    
+          
+
+
+    </main>
+
+    <br>
+    <br>
+    <br>
+    <div>
+        <footer id="footer-name">
+            A website that you can search for song titles on with the
+            ability to click on words to give the definitions of each word
+        </footer>
+        <br>
     </div>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./danscript.js"></script>
 </body>
 
 </html>
