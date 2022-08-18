@@ -5,7 +5,7 @@
 var lyricsIn = document.querySelector('#lyrics');
 var artistIn = document.querySelector('#artist');
 var trackIn = document.querySelector('#track');
-var sendit = document.querySelector('#SEND');
+var submitEl = document.querySelector('#submit');
 var content = document.querySelector('#content');
 
 var corsLoop = 'https://tranquil-tundra-39612.herokuapp.com/'
@@ -20,8 +20,38 @@ var lyricsQuery = 'q_lyrics=';
 
 
 var apikey = 'apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
-var getTrack = function () {
 
+
+var getLyrics = function (id) {
+  fetch(corsLoop + trackUrl + id + '&' + apikey)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var lyricsString = (data.message.body.lyrics.lyrics_body);
+      removed = lyricsString.slice(0, lyricsString.indexOf('...'));
+      console.log(removed);
+      var lyricsParagraph = document.createElement('p');
+      lyricsParagraph.innerHTML = removed;
+      content.append(lyricsParagraph);
+
+      var stringLyrics = removed.toString();
+      console.log(stringLyrics);
+      var noBrakes = stringLyrics.replace(/[\r\n]/gm, ' ');
+      var lyricArr = noBrakes.split(" ");
+      console.log(lyricArr);
+
+      lyricArr.forEach(function (item) {
+        var a = document.createElement('a');
+        a.href = "#";
+        a.innerText = item + " ";
+        document.body.appendChild(a);
+      });
+    })
+}
+submitEl.addEventListener('click', function() {
+console.log('something')
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
@@ -63,34 +93,4 @@ var getTrack = function () {
       getLyrics(trackId);
 
     });
-}
-
-var getLyrics = function (id) {
-  fetch(corsLoop + trackUrl + id + '&' + apikey)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      var lyricsString = (data.message.body.lyrics.lyrics_body);
-      removed = lyricsString.slice(0, lyricsString.indexOf('...'));
-      console.log(removed);
-      var lyricsParagraph = document.createElement('p');
-      lyricsParagraph.innerHTML = removed;
-      content.append(lyricsParagraph);
-
-      var stringLyrics = removed.toString();
-      console.log(stringLyrics);
-      var noBrakes = stringLyrics.replace(/[\r\n]/gm, ' ');
-      var lyricArr = noBrakes.split(" ");
-      console.log(lyricArr);
-
-      lyricArr.forEach(function (item) {
-        var a = document.createElement('a');
-        a.href = "#";
-        a.innerText = item + " ";
-        document.body.appendChild(a);
-      });
-    })
-}
-sendit.addEventListener('click', getTrack);
+});
