@@ -7,6 +7,7 @@ var artistIn = document.querySelector('#artist');
 var trackIn = document.querySelector('#track');
 var submitEl = document.querySelector('#submit');
 var content = document.querySelector('#content');
+var def = document.querySelector('#def')
 
 var corsLoop = 'https://tranquil-tundra-39612.herokuapp.com/'
 
@@ -43,15 +44,17 @@ var getLyrics = function (id) {
         var a = document.createElement('a');
         a.href = "#/";
         a.innerText = item + " ";
-
         content.appendChild(a);
-        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
         a.onclick = function () {
-          console.log(defString(getDefinition(a.innerText.trim())))
+          (defString(getDefinition(a.innerText.trim())))
+          
+        
         };
+        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
       });
     })
 }
+
 
 submitEl.addEventListener('click', function () {
   var currentArtist = artistIn.value;
