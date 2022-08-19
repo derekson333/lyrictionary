@@ -32,9 +32,10 @@ var getLyrics = function (id) {
       var lyricsString = (data.message.body.lyrics.lyrics_body);
       removed = lyricsString.slice(0, lyricsString.indexOf('...'));
       console.log(removed);
-      var lyricsParagraph = document.createElement('p');
-      lyricsParagraph.innerHTML = removed;
-      content.append(lyricsParagraph);
+
+      // var lyricsParagraph = document.createElement('p');
+      // lyricsParagraph.innerHTML = removed;
+      // content.append(lyricsParagraph);
 
       var stringLyrics = removed.toString();
       console.log(stringLyrics);
@@ -44,14 +45,20 @@ var getLyrics = function (id) {
 
       lyricArr.forEach(function (item) {
         var a = document.createElement('a');
-        a.href = "#";
+        a.href = "#/";
         a.innerText = item + " ";
-        document.body.appendChild(a);
+        
+        content.appendChild(a);
+        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
+        a.onclick = function(){
+          console.log(defString(getDefinition(a.innerText.trim())))};
       });
     })
 }
+
+var getDefinition = function() {console.log('hello')}
 submitEl.addEventListener('click', function() {
-console.log('something')
+// console.log('something')
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
