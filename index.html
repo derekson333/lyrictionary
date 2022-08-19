@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="" name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://kit.fontawesome.com/92bb807836.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Lyrictionary</title>
 </head>
 
@@ -14,7 +14,6 @@
     <header>
         <div class="nav-wrapper banner">
             <!-- <i class="fa-solid fa-headphones"></i> -->
-            
             <h1><i id= "headphone-icon" class="fa-solid fa-headphones"></i> Lyrictionary</h1>
             <h2>Come and find the lyrics to your favorite songs</h2>
         </div>
@@ -36,17 +35,14 @@
                     <div class="card-content yellow">
                         <span class="card-title">Search</span>
                         <div class="card-action">
-                            <input type="text" id='track' placeholder="SONG Ttile HERE">
+                            <input type="text" id='track' placeholder="SONG TITLE HERE">
                             <input type="text" id='artist' placeholder="MUSIC TYPE">
                             <input type="text" id='lyrics' placeholder="ARTIST">
                             <button id='submit'>Submit</button>
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
-                <!-- <form action="/action_page.php"> -->
-                <!-- <label for="songtitle">Song Title:</label><br><br> -->
-                <!-- </form> -->
+            
             </div>
 
             <div class="col s12 m6">
@@ -54,7 +50,9 @@
                     <div class="card-content yellow">
                         <span class="card-title">Word Definition</span>
                         <div class="card-action">
-                            <a class="blue-text" href="#word">Show Definition</a>
+                            <a class="blue-text" href="#word">
+                            </a>
+                            <p id="def" class="blue-text"></p>
                         </div>
                     </div>
                 </div>
@@ -65,7 +63,8 @@
                     <div class="card-content yellow">
                         <span class="card-title">History</span>
                         <div class="card-action">
-                            <a class="blue-text" href="#histoty">Show History</a>
+                            <a class="blue-text" href="#histoty"></a>
+                            <p id="history" class="blue-text"></p>
                         </div>
                     </div>
                 </div>
