@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="" name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/92bb807836.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Lyrictionary</title>
 </head>
@@ -14,15 +14,17 @@
     <header>
         <div class="nav-wrapper banner">
             <!-- <i class="fa-solid fa-headphones"></i> -->
+            <i class="fa-solid fa-headphones"></i>
             <h1>Lyrictionary</h1>
             <h2>Come and find the lyrics to your favorite songs</h2>
         </div>
         <nav>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="#about-us">About Us</a></li>
-                <li><a href="">Song Lyrics</a></li>
-                <li><a href="">Word Definition</a></li>
-                <li><a href="">Search History</a></li>
+                <li><a href="#song">Song Lyrics</a></li>
+                <li><a href="#word">Word Definition</a></li>
+                <li><a href="#history">Search History</a></li>
             </ul>
         </nav>
     </header>
@@ -34,9 +36,9 @@
                     <div class="card-content yellow">
                         <span class="card-title">Search</span>
                         <div class="card-action">
-                            <input id='track' placeholder="Song Title here"><br><br>
-                            <input id='artist' placeholder="Music Type"><br><br>
-                            <input id='lyrics' placeholder="Artist"><br><br>
+                            <input id='track' placeholder="Song Title here">
+                            <input id='artist' placeholder="Music Type">
+                            <input id='lyrics' placeholder="Artist">
                             <button id='submit'>Submit</button>
                         </div>
                     </div>
@@ -52,7 +54,7 @@
                     <div class="card-content yellow">
                         <span class="card-title">Word Definition</span>
                         <div class="card-action">
-                            <a href="#">Show Definition</a>
+                            <a href="#word">Show Definition</a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +65,7 @@
                     <div class="card-content yellow">
                         <span class="card-title">History</span>
                         <div class="card-action">
-                            <a href="#">Show History</a>
+                            <a href="#histoty">Show History</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +78,10 @@
                     <div class="card-content light gray">
                         <span class="card-title">Lyrics</span>
                         <div class="card-action">
-                            <!-- <a href="#">Show Lyrics</a> -->
+                            <!-- <a href="#song"></a> -->
+                            <section class="#song" id="song">
+                            <p>Song Lyrics...
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +94,7 @@
                     <div class="card-content light gray">
                         <span class="card-title">About Us</span>
                         <div class="card-action">
-                            <a href="#about-us"></a>
+                            <!-- <a href="#about-us"></a> -->
                             <section class="#about-me" id="about-us">
                                 <p>Hello, we are the students of group 3. We are designing a website that is not only
                                     provides music serach but also provides dictionary for whoever wants to look up the
@@ -102,44 +107,17 @@
                 </div>
             </div>
         </div>
-        </div>
-
-       
-        <!-- <div class="col s12">
-                    <div class="card light blue">
-                        <div class="card-content white">
-                            <span class="card-title">Lyrics</span>
-                            <div class="card-action">
-                                <a href="#">Show Lyrics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-
-
-        <!-- <div class="divider"></div>
-    <div class="section">
-        <h4> song lyrics</h4>
-    </div>
-    <div class="col s9">
-        <h4>Search History</h4>
-    </div>
-    <div class="col s9">
-        <h4>word and definition</h4> -->
 
     </main>
 
     <footer>
         <div class="footer-name">
             <div class="container">
-                A website that you can search for song titles on with the ability to click on words to give the
-                definitions of each word
+                A website that you can search for song titles on with the ability to click the definitions of each word.
             </div>
         </div>
     </footer>
-    <br>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./ryansIndex.js"></script>
     <script src="./danscript.js"></script>
