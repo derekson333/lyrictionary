@@ -12,15 +12,6 @@
 
 <body>
     <header>
-        <span>
-            <button class="btn btn-primary" type="button" id="close">x<i class="fa-solid fa-circle-xmark"></i></button>
-            <button class="btn btn-secondary" type="button" id="minus">-<i
-                    class="fa-solid fa-circle-minus"></i></button>
-            <button class="btn btn-tertiary" type="button" id="zoom">-><i
-                    class="fa-solid fa-circle-arrow-down-right"></i></button>
-        </span>
-
-
         <div class="nav-wrapper banner">
             <!-- <i class="fa-solid fa-headphones"></i> -->
             <h1>Lyrictionary</h1>
@@ -28,55 +19,46 @@
         </div>
         <nav>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="about-us">About Us</a></li>
+                <li><a href="#about-us">About Us</a></li>
                 <li><a href="">Song Lyrics</a></li>
                 <li><a href="">Word Definition</a></li>
                 <li><a href="">Search History</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="row">
-            <div class="col col-3">
-                <br>
+            <div class="col s12 m6">
+                <div class="card light blue">
+                    <div class="card-content yellow">
+                        <span class="card-title">Search</span>
+                        <div class="card-action">
+                            <input id='track' placeholder="Song Title here"><br><br>
+                            <input id='artist' placeholder="Music Type"><br><br>
+                            <input id='lyrics' placeholder="Artist"><br><br>
+                            <button id='submit'>Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
                 <!-- <form action="/action_page.php"> -->
                 <!-- <label for="songtitle">Song Title:</label><br><br> -->
-                <input id='track' placeholder="Song Title here"><br><br>
-                <input id='artist' placeholder="Music Type"><br><br>
-                <input id='lyrics' placeholder="Artist"><br><br>
-                <button id='submit'>Submit</button>
                 <!-- </form> -->
             </div>
-            <div class="row-1">
-                <div class="col s12 m3">
-                    <div class="card light blue">
-                        <div class="card-content yellow">
-                            <span class="card-title">Lyrics</span>
-                            <div class="card-action">
-                                <a href="#">Show Lyrics</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
 
-            <div class="row-1">
-                <div class="col s12 m3">
-                    <div class="card light blue">
-                        <div class="card-content yellow">
-                            <span class="card-title">Word</span>
-                            <div class="card-action">
-                                <a href="#">Show Definition</a>
-                            </div>
+            <div class="col s12 m6">
+                <div class="card light blue">
+                    <div class="card-content yellow">
+                        <span class="card-title">Word Definition</span>
+                        <div class="card-action">
+                            <a href="#">Show Definition</a>
                         </div>
                     </div>
                 </div>
             </div>
-        
 
-        <div class="row-1">
-            <div class="col s12 m3">
+            <div class="col s12 m6">
                 <div class="card light blue">
                     <div class="card-content yellow">
                         <span class="card-title">History</span>
@@ -87,16 +69,14 @@
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
         <div class="row-0">
             <div class="col s12 m3">
                 <div class="card light blue">
                     <div class="card-content light gray">
                         <span class="card-title">Lyrics</span>
                         <div class="card-action">
-                            <a href="about-us">Show Lyrics</a>
+                            <!-- <a href="#">Show Lyrics</a> -->
                         </div>
                     </div>
                 </div>
@@ -108,29 +88,24 @@
                 <div class="card light blue">
                     <div class="card-content light gray">
                         <span class="card-title">About Us</span>
-                        <div class="card-action about-us">
+                        <div class="card-action">
                             <a href="#about-us"></a>
-                            <section class="about-me" id="about-us">
-                                <p>Hello, we are the students of group 3. We are designing a website that is not only provides music serach but also provides dictionary for whoever wants to look up the meaning of a word from the lyrics.
+                            <section class="#about-me" id="about-us">
+                                <p>Hello, we are the students of group 3. We are designing a website that is not only
+                                    provides music serach but also provides dictionary for whoever wants to look up the
+                                    meaning of a word from the lyrics.
                                     Hope you'all enjoy this application.
                                 </p>
-                              </section>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        
-        <div class="row-5">
-            <div class="col s3"></div>
-            <div class="card">
-                <div class="card-content white">
-                    <div class="col s3">Word Definition</div>
-                </div>
-            </div>
         </div>
-                <!-- <div class="col s12">
+
+       
+        <!-- <div class="col s12">
                     <div class="card light blue">
                         <div class="card-content white">
                             <span class="card-title">Lyrics</span>
@@ -140,7 +115,7 @@
                         </div>
                     </div>
                 </div> -->
-        
+
 
 
         <!-- <div class="divider"></div>
