@@ -45,18 +45,20 @@ var getLyrics = function (id) {
 
       lyricArr.forEach(function (item) {
         var a = document.createElement('a');
-        a.href = "#";
+        a.href = "#/";
         a.innerText = item + " ";
         
         content.appendChild(a);
-        a.onclick = function(){console.log(a.innerText)};
+        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
+        a.onclick = function(){
+          console.log(defString(getDefinition(a.innerText.trim())))};
       });
     })
 }
 
 var getDefinition = function() {console.log('hello')}
 submitEl.addEventListener('click', function() {
-console.log('something')
+// console.log('something')
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
