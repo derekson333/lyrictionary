@@ -58,7 +58,7 @@ var getLyrics = function (id) {
 
 var getDefinition = function() {console.log('hello')}
 submitEl.addEventListener('click', function() {
-console.log('something')
+// console.log('something')
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
