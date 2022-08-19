@@ -45,11 +45,13 @@ var getLyrics = function (id) {
 
       lyricArr.forEach(function (item) {
         var a = document.createElement('a');
-        a.href = "#";
+        a.href = "#/";
         a.innerText = item + " ";
         
         content.appendChild(a);
-        a.onclick = function(){console.log(a.innerText)};
+        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
+        a.onclick = function(){
+          console.log(defString(getDefinition(a.innerText.trim())))};
       });
     })
 }
