@@ -13,7 +13,7 @@ var corsLoop = 'https://tranquil-tundra-39612.herokuapp.com/'
 var requestUrl = 'https://api.musixmatch.com/ws/1.1/track.search?'
 var trackUrl = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='
 var secondParam = '&page_size=5&apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
-// track.search?q_lyrics
+
 var artistQuery = '&q_artist=';
 var trackQuery = '&q_track=';
 var lyricsQuery = 'q_lyrics=';
@@ -33,10 +33,6 @@ var getLyrics = function (id) {
       removed = lyricsString.slice(0, lyricsString.indexOf('...'));
       console.log(removed);
 
-      // var lyricsParagraph = document.createElement('p');
-      // lyricsParagraph.innerHTML = removed;
-      // content.append(lyricsParagraph);
-
       var stringLyrics = removed.toString();
       console.log(stringLyrics);
       var noBrakes = stringLyrics.replace(/[\r\n]/gm, ' ');
@@ -47,18 +43,17 @@ var getLyrics = function (id) {
         var a = document.createElement('a');
         a.href = "#/";
         a.innerText = item + " ";
-        
+
         content.appendChild(a);
         // Does a definition fetch when clicking on a word and stores the string definition to displayDef
-        a.onclick = function(){
-          console.log(defString(getDefinition(a.innerText.trim())))};
+        a.onclick = function () {
+          console.log(defString(getDefinition(a.innerText.trim())))
+        };
       });
     })
 }
 
-var getDefinition = function() {console.log('hello')}
-submitEl.addEventListener('click', function() {
-// console.log('something')
+submitEl.addEventListener('click', function () {
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
