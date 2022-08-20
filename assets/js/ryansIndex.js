@@ -7,13 +7,14 @@ var artistIn = document.querySelector('#artist');
 var trackIn = document.querySelector('#track');
 var submitEl = document.querySelector('#submit');
 var content = document.querySelector('#content');
+var def = document.querySelector('#def')
 
 var corsLoop = 'https://tranquil-tundra-39612.herokuapp.com/'
 
 var requestUrl = 'https://api.musixmatch.com/ws/1.1/track.search?'
 var trackUrl = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='
 var secondParam = '&page_size=5&apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
-// track.search?q_lyrics
+
 var artistQuery = '&q_artist=';
 var trackQuery = '&q_track=';
 var lyricsQuery = 'q_lyrics=';
@@ -32,9 +33,6 @@ var getLyrics = function (id) {
       var lyricsString = (data.message.body.lyrics.lyrics_body);
       removed = lyricsString.slice(0, lyricsString.indexOf('...'));
       console.log(removed);
-      var lyricsParagraph = document.createElement('p');
-      lyricsParagraph.innerHTML = removed;
-      content.append(lyricsParagraph);
 
       var stringLyrics = removed.toString();
       console.log(stringLyrics);
@@ -44,14 +42,21 @@ var getLyrics = function (id) {
 
       lyricArr.forEach(function (item) {
         var a = document.createElement('a');
-        a.href = "#";
+        a.href = "#/";
         a.innerText = item + " ";
-        document.body.appendChild(a);
+        content.appendChild(a);
+        a.onclick = function () {
+          (defString(getDefinition(a.innerText.trim())))
+          
+        
+        };
+        // Does a definition fetch when clicking on a word and stores the string definition to displayDef
       });
     })
 }
-submitEl.addEventListener('click', function() {
-console.log('something')
+
+
+submitEl.addEventListener('click', function () {
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
   var currentLyrics = lyricsIn.value;
