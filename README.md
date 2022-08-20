@@ -20,12 +20,13 @@
 * SO THAT I can know what that word means if I didn’t understand
 
 ---
-```
+
 ### Deployed Image: 
-![Joyce's website screenshot can be found here.](./assets/Final-Screenshot.png)
 
-### Required to submit the following URL for review:
+![Screenshot](./assets/Final-Screenshot.png)
 
+```
+ 
 * Github URL: 
 https://github.com/derekson333/lyrictionary
 
@@ -35,7 +36,7 @@ https://derekson333.github.io/lyrictionary/
 
 ---
 <sub><h5>
-Group 3 Member: Jason Hardy | 
+Group 3 Members: Jason Hardy | 
 Dan Erekson | Joyce Chen | Ryan Jewell<h5></sub>
 
 
