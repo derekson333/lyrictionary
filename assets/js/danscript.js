@@ -1,5 +1,5 @@
 var word
-var wordDef
+// var wordDef
 var displayDef
 var currentWord
 
@@ -16,12 +16,16 @@ const options = {
 function getDefinition(word) {
   fetch('https://wordsapiv1.p.rapidapi.com/words/' + word + '/definitions', options)
     .then(response => response.json())
-    .then(response => wordDef = response)
-    .then(response => console.log(wordDef))
-    .catch(err => console.error(err));
+    .then(response => defString(response))
+    // .then(console.log(wordDef))
+    // .catch(err => console.error(err));
+  // currentWord = wordDef["word"] + ": ";
+  // displayDef = wordDef.definitions[0].definition
+  // var fullDefinition = (currentWord + displayDef)
+  // addDefinition(fullDefinition)
 }
 // manipulates JSON into string to display
-function defString() {
+function defString(wordDef) {
   currentWord = wordDef["word"] + ": ";
   displayDef = wordDef.definitions[0].definition
   var fullDefinition = (currentWord + displayDef)
