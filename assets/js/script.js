@@ -46,7 +46,7 @@ var getLyrics = function (id) {
         a.innerText = item + " ";
         content.appendChild(a);
         a.onclick = function () {
-          (defString(getDefinition(a.innerText.trim())))
+          (getDefinition(a.innerText.trim()))
           
         
         };
