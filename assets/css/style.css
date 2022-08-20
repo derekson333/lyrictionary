@@ -1,0 +1,121 @@
+* {
+  font-family: "Open Sans", sans-serif;
+  font-style: bold;
+  font-size: 20px;
+}
+
+.banner {
+  padding: 100px;
+  text-align: center;
+  background-image: linear-gradient(grey, pink, #2196F3);
+  border-radius: 0;
+}
+
+#headphone-icon {
+  font-size: 90px;
+  color: white;
+}
+
+main {
+  padding-top: 25px;
+}
+
+.nav-wrapper h1 {
+  color: aqua;
+  text-align: center;
+  padding-bottom: 10px;
+  /* background-image: url("../images/digital-marketing-meeting.jpg"); */
+}
+
+#nav-mobile ul {
+  color: white;
+  font-size: 40px;
+}
+
+div h1 {
+  font-size: 72px;
+  font-family: "Open Sans", sans-serif;
+}
+
+div h2 {
+  color: white;
+  font-size: 24px;
+  font-stretch: wider;
+  font-family: monospace;
+}
+
+nav li a {
+  color: white;
+  align-items: center;
+  font-size: 18px;
+  flex-wrap: unwrap;
+  font-style: bold;
+  font-stretch: condensed;
+  font-family: monospace;
+}
+
+.card-title {
+  color: peru;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+div.row {
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+.row button {
+  color: peru;
+  font-size: 18px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+
+.blue-text {
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.blue-row {
+  padding-bottom: 12px;
+}
+
+::placeholder {
+  color: #2196F3;
+  font-family: monospace;
+}
+
+p {
+  color: white;
+  font-size: 20px;
+  font-family: monospace;
+  text-align: left;
+}
+
+div.footer-name {
+  border-radius: 15px;
+  text-align: center;
+  color: black;
+  background-image: linear-gradient(135deg, pink 30%, lightgray, rgb(188, 145, 188));
+}
+
+div.container {
+  padding: 0;
+  font-size: 14px;
+  font-family: monospace;
+  text-align: center;
+}
+
+
+/* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict */
+
+/* Tablets - header changes color */
+@media screen and (max-width: 992px) {}
+
+/* Large smartphones - navbar changes color */
+@media screen and (max-width: 768px) {}
+
+/* Small smartphones - image placeholders change color */
+@media screen and (max-width: 576px) {}
