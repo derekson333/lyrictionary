@@ -15,12 +15,53 @@ var requestUrl = 'https://api.musixmatch.com/ws/1.1/track.search?'
 var trackUrl = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='
 var secondParam = '&page_size=5&apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
 
-var artistQuery = '&q_artist=';
+var artistQuery = 'q_artist=';
 var trackQuery = '&q_track=';
-var lyricsQuery = 'q_lyrics=';
+var lyricsQuery = '&q_lyrics=';
 
 
 var apikey = 'apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
+
+
+
+
+submitEl.addEventListener('click', function () {
+  content.innerHTML = ''
+  var currentArtist = artistIn.value;
+  var currentTrack = trackIn.value;
+  var currentLyrics = lyricsIn.value;
+  currentArtist = currentArtist.replaceAll(" ", "+");
+  currentTrack = currentTrack.replaceAll(" ", "+");
+  currentLyrics = currentLyrics.replaceAll(" ", "+");
+  if (currentArtist == '' && currentTrack == '' && currentLyrics == '') {
+    return
+  }
+  if (currentArtist != '') {
+    var currentRequest = requestUrl + artistQuery + currentArtist + trackQuery + currentTrack + lyricsQuery + currentLyrics
+  } else {
+    return
+  }
+  console.log(requestUrl);
+  var completeUrl = corsLoop + currentRequest + secondParam
+  console.log(completeUrl);
+  console.log(currentLyrics);
+  fetch(completeUrl)
+    .then(function (response) {
+
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      console.log(data.message.body.track_list[0].track.track_name);
+      var title = document.createElement('h2');
+      title.innerHTML = (data.message.body.track_list[0].track.track_name);
+      content.appendChild(title);
+      var trackId = (data.message.body.track_list[0].track.track_id);
+
+      getLyrics(trackId);
+
+    });
+});
 
 
 var getLyrics = function (id) {
@@ -36,8 +77,8 @@ var getLyrics = function (id) {
 
       var stringLyrics = removed.toString();
       console.log(stringLyrics);
-      var noBrakes = stringLyrics.replace(/[\r\n]/gm, ' ');
-      var lyricArr = noBrakes.split(" ");
+      var noBreaks = stringLyrics.replace(/[\r\n]/gm, ' ');
+      var lyricArr = noBreaks.split(" ");
       console.log(lyricArr);
 
       lyricArr.forEach(function (item) {
@@ -46,56 +87,15 @@ var getLyrics = function (id) {
         a.innerText = item + " ";
         content.appendChild(a);
         a.onclick = function () {
-          (getDefinition(a.innerText.trim()))
-          
-        
+          var currentWord = a.innerText
+          var trimWord = currentWord.trim()
+          var completeWord = trimWord.replace(/[^A-Z0-9]/ig, "");
+
+          (getDefinition(completeWord))
+
+
         };
         // Does a definition fetch when clicking on a word and stores the string definition to displayDef
       });
     })
 }
-
-
-submitEl.addEventListener('click', function () {
-  var currentArtist = artistIn.value;
-  var currentTrack = trackIn.value;
-  var currentLyrics = lyricsIn.value;
-  currentArtist = currentArtist.replaceAll(" ", "+");
-  currentTrack = currentTrack.replaceAll(" ", "+");
-  currentLyrics = currentLyrics.replaceAll(" ", "+");
-  if (currentArtist == '' && currentTrack == '' && currentLyrics == '') {
-    return
-  }
-  if (currentLyrics != '') {
-    requestUrl = requestUrl + lyricsQuery + currentLyrics;
-
-  }
-  if (currentArtist != '') {
-    requestUrl = requestUrl + artistQuery + currentArtist;
-
-  }
-  if (currentTrack != '') {
-    requestUrl = requestUrl + trackQuery + currentTrack;
-
-  }
-  console.log(requestUrl);
-  var completeUrl = corsLoop + requestUrl + secondParam
-  console.log(completeUrl);
-  console.log(currentLyrics);
-  fetch(completeUrl)
-    .then(function (response) {
-
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      console.log(data.message.body.track_list[0].track.track_name);
-      var paragraph = document.createElement('p');
-      paragraph.innerHTML = (data.message.body.track_list[0].track.track_name);
-      var trackId = (data.message.body.track_list[0].track.track_id);
-      content.append(paragraph);
-
-      getLyrics(trackId);
-
-    });
-});
