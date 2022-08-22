@@ -9,7 +9,7 @@ var submitEl = document.querySelector('#submit');
 var content = document.querySelector('#content');
 var def = document.querySelector('#def')
 
-var corsLoop = 'https://tranquil-tundra-39612.herokuapp.com/'
+var corsLoop = ''
 
 var requestUrl = 'https://api.musixmatch.com/ws/1.1/track.search?'
 var trackUrl = 'https://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id='
