@@ -74,8 +74,8 @@ submitEl.addEventListener('click', function () {
     console.log(localStorage.getItem(currentTitle))
     console.log(localStorage.key(storageIndex))
     var historyLink = document.createElement('a')
-    historyLink.setAttribute('href',"localStorage.getItem(currentTitle)");
-    historyLink.innerText = (localStorage.key(storageIndex))
+    historyLink.setAttribute('href',"#/");
+    historyLink.innerText = (currentTitle)
     historyContent.appendChild(historyLink)
     storageIndex += 1
   
