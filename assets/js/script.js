@@ -1,4 +1,7 @@
-
+var word
+var wordDef
+var displayDef
+var currentWord
 
 var lyricsIn = document.querySelector('#lyrics');
 var artistIn = document.querySelector('#artist');
@@ -6,6 +9,7 @@ var trackIn = document.querySelector('#track');
 var submitEl = document.querySelector('#submit');
 var lyricsContent = document.querySelector('#content');
 var historyContent = document.querySelector('#history')
+var definitionLocation = document.querySelector('#definition')
 
 
 var corsLink = 'https://tranquil-tundra-39612.herokuapp.com/'
@@ -24,9 +28,16 @@ var apikey = 'apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
 var historyArray = []
 var storageIndex = 1
 
+const options = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '70bb5898ebmsh299ec14bc66936ap173708jsna572c78a32aa',
+    'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+  }
+};
 
 
-
+//  event listener for submit button for search
 submitEl.addEventListener('click', function () {
 
 
@@ -51,6 +62,7 @@ submitEl.addEventListener('click', function () {
 
   var completeUrl = corsLink + currentRequest + secondParam
 
+  // executes fetch from Musixmatch API for Track
   fetch(completeUrl)
     .then(function (response) {
 
@@ -85,7 +97,7 @@ submitEl.addEventListener('click', function () {
 
 });
 
-
+// executes fetch from Musixmatch API for song lyrics
 var getLyrics = function (id) {
   fetch(corsLink + trackUrl + id + '&' + apikey)
     .then(function (response) {
@@ -120,4 +132,49 @@ var getLyrics = function (id) {
 
       });
     })
+}
+
+// executes fetch from Words API for definition
+function getDefinition(word) {
+  fetch('https://wordsapiv1.p.rapidapi.com/words/' + word + '/definitions', options)
+    .then(response => response.json())
+    .then(response => defString(response))
+ 
+}
+// manipulates JSON into string to display
+function defString(wordDef) {
+  definitionLocation.innerHTML = ''
+
+  if (wordDef.definitions.length >= 1) {
+    currentWord = wordDef["word"] + ": "
+    capsWord = currentWord.charAt(0).toUpperCase() + currentWord.slice(1)
+    var word = document.createElement('h3')
+    var definition = document.createElement('p')
+    definition.setAttribute('class', 'blue-text')
+    word.innerHTML = capsWord
+    definitionLocation.appendChild(word)
+    console.log(wordDef.definitions.length)
+  }
+  if (wordDef.definitions.length > 2) {
+    var definitionArray = wordDef.definitions
+      for (let i = 0; i <= 3; i++){
+        console.log(i)
+        var currentDef = document.createElement('p')
+        currentDef.setAttribute('class', 'blue-text')
+        var defContent = definitionArray[i].definition.charAt(0).toUpperCase() + definitionArray[i].definition.slice(1)
+        currentDef.innerHTML =  i + 1 + '. ' + defContent
+        definitionLocation.appendChild(currentDef)
+      }
+
+  } else if (wordDef.definitions.length == 0) {
+    return
+  } else if (wordDef.definitions.length <= 2) {
+
+    displayDef = wordDef.definitions[0].definition
+    displayDef = displayDef.charAt(0).toUpperCase() + displayDef.slice(1)
+    definition.innerHTML = displayDef
+    definitionLocation.appendChild(definition)
+  }
+
+
 }
