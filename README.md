@@ -25,14 +25,13 @@
 
 ![Screenshot](./assets/Final-Screenshot.png)
 
-```
+---
  
 * Github URL: 
 https://github.com/derekson333/lyrictionary
 
 * Github Deployed Page: 
 https://derekson333.github.io/lyrictionary/
-```
 
 ---
 <sub><h5>

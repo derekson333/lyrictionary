@@ -1,5 +1,5 @@
 var word
-// var wordDef
+var wordDef
 var displayDef
 var currentWord
 
@@ -13,6 +13,7 @@ const options = {
   }
 };
 
+// fetches the definition of a word from Words API
 function getDefinition(word) {
   fetch('https://wordsapiv1.p.rapidapi.com/words/' + word + '/definitions', options)
     .then(response => response.json())
