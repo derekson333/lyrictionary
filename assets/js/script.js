@@ -5,6 +5,7 @@ var artistIn = document.querySelector('#artist');
 var trackIn = document.querySelector('#track');
 var submitEl = document.querySelector('#submit');
 var lyricsContent = document.querySelector('#content');
+var historyContent = document.querySelector('#history')
 
 
 var corsLink = 'https://tranquil-tundra-39612.herokuapp.com/'
@@ -20,10 +21,16 @@ var lyricsQuery = '&q_lyrics=';
 
 var apikey = 'apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
 
+var historyArray = []
+var storageIndex = 1
+
 
 
 
 submitEl.addEventListener('click', function () {
+
+
+
   lyricsContent.innerHTML = ''
   var currentArtist = artistIn.value;
   var currentTrack = trackIn.value;
@@ -57,8 +64,25 @@ submitEl.addEventListener('click', function () {
       var trackId = (data.message.body.track_list[0].track.track_id);
 
       getLyrics(trackId);
+      if (historyArray.length > 5) {
+        historyArray.shift()
+      }
+      var currentTitle = title.innerText
+      
+      localStorage.setItem(currentTitle, completeUrl)
+    historyArray.unshift(localStorage.getItem(currentTitle))
+    console.log(localStorage.getItem(currentTitle))
+    console.log(localStorage.key(storageIndex))
+    var historyLink = document.createElement('a')
+    historyLink.setAttribute('href',"#/");
+    historyLink.innerText = (currentTitle)
+    historyContent.appendChild(historyLink)
+    storageIndex += 1
+  
 
     });
+    
+
 });
 
 
