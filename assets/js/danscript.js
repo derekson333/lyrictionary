@@ -1,5 +1,7 @@
+
+
 var word
-var wordDef
+// var wordDef
 var displayDef
 var currentWord
 
@@ -13,7 +15,6 @@ const options = {
   }
 };
 
-// fetches the definition of a word from Words API
 function getDefinition(word) {
   fetch('https://wordsapiv1.p.rapidapi.com/words/' + word + '/definitions', options)
     .then(response => response.json())
@@ -29,6 +30,7 @@ function defString(wordDef) {
     capsWord = currentWord.charAt(0).toUpperCase() + currentWord.slice(1)
     var word = document.createElement('h3')
     var definition = document.createElement('p')
+    definition.setAttribute('class', 'blue-text')
     word.innerHTML = capsWord
     definitionLocation.appendChild(word)
     console.log(wordDef.definitions.length)
@@ -38,6 +40,7 @@ function defString(wordDef) {
       for (let i = 0; i <= 3; i++){
         console.log(i)
         var currentDef = document.createElement('p')
+        currentDef.setAttribute('class', 'blue-text')
         var defContent = definitionArray[i].definition.charAt(0).toUpperCase() + definitionArray[i].definition.slice(1)
         currentDef.innerHTML =  i + 1 + '. ' + defContent
         definitionLocation.appendChild(currentDef)
