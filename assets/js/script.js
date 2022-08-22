@@ -37,7 +37,7 @@ const options = {
 };
 
 
-
+//  event listener for submit button for search
 submitEl.addEventListener('click', function () {
 
 
@@ -62,6 +62,7 @@ submitEl.addEventListener('click', function () {
 
   var completeUrl = corsLink + currentRequest + secondParam
 
+  // executes fetch from Musixmatch API for Track
   fetch(completeUrl)
     .then(function (response) {
 
@@ -96,7 +97,7 @@ submitEl.addEventListener('click', function () {
 
 });
 
-
+// executes fetch from Musixmatch API for song lyrics
 var getLyrics = function (id) {
   fetch(corsLink + trackUrl + id + '&' + apikey)
     .then(function (response) {
@@ -133,6 +134,7 @@ var getLyrics = function (id) {
     })
 }
 
+// executes fetch from Words API for definition
 function getDefinition(word) {
   fetch('https://wordsapiv1.p.rapidapi.com/words/' + word + '/definitions', options)
     .then(response => response.json())
