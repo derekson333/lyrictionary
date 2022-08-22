@@ -11,7 +11,6 @@ var lyricsContent = document.querySelector('#content');
 var historyContent = document.querySelector('#history')
 var definitionLocation = document.querySelector('#definition')
 
-
 var corsLink = 'https://tranquil-tundra-39612.herokuapp.com/'
 
 var requestUrl = 'https://api.musixmatch.com/ws/1.1/track.search?'
@@ -21,7 +20,6 @@ var secondParam = '&page_size=5&apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
 var artistQuery = 'q_artist=';
 var trackQuery = '&q_track=';
 var lyricsQuery = '&q_lyrics=';
-
 
 var apikey = 'apikey=46de1ff7cdb6bc5903ea0ab79193cea2';
 
@@ -35,7 +33,6 @@ const options = {
     'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
   }
 };
-
 
 //  event listener for submit button for search
 submitEl.addEventListener('click', function () {
@@ -83,8 +80,6 @@ submitEl.addEventListener('click', function () {
       
       localStorage.setItem(currentTitle, completeUrl)
     historyArray.unshift(localStorage.getItem(currentTitle))
-    console.log(localStorage.getItem(currentTitle))
-    console.log(localStorage.key(storageIndex))
     var historyLink = document.createElement('a')
     historyLink.setAttribute('href',"#/");
     historyLink.innerText = (currentTitle)
@@ -153,12 +148,10 @@ function defString(wordDef) {
     definition.setAttribute('class', 'blue-text')
     word.innerHTML = capsWord
     definitionLocation.appendChild(word)
-    console.log(wordDef.definitions.length)
   }
   if (wordDef.definitions.length > 2) {
     var definitionArray = wordDef.definitions
       for (let i = 0; i <= 3; i++){
-        console.log(i)
         var currentDef = document.createElement('p')
         currentDef.setAttribute('class', 'blue-text')
         var defContent = definitionArray[i].definition.charAt(0).toUpperCase() + definitionArray[i].definition.slice(1)
