@@ -84,8 +84,9 @@ var fetchMusic = function (completeUrl) {
 var historyShift = function (currentTitle, completeUrl, trackId) {
 
 
-  if (historyArray.length > 5) {
+  if (historyArray.length > 8) {
     historyArray.shift()
+    localStorage.shift()
   }
   var historyObject = {
     url: completeUrl,
